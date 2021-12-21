@@ -13,6 +13,7 @@ public class Faculty extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JTextField aaa =new JTextField();
         JTextField bbb  = new JTextField();
+        JTextField cvr  = new JTextField();
 		String s[]= {"Color","Black n White"};
         JComboBox<String> box1   = new JComboBox<>(s);
 		JTextField ccc =new JTextField();
@@ -36,13 +37,37 @@ public class Faculty extends JFrame{
 		JLabel sizes=new JLabel("Size of page");
 		sizes.setBounds(0,602,200,100);
 		JButton add=new JButton("Request");
-		
+		add.addActionListener(new ActionListener()
+		{
+		@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				String rid=aaa.getText();
+				String print_type=cvr.getSelectedText().toString();
+				int noc=Integer.parseInt(ccc.getText());
+				String page_type=bbb.getSelectedText().toString();
+				String sizes=ddd.getSelectedItem().toString();
+				faculty_conditions ss=new faculty_conditions(rid,print_type, noc,page_type,sizes);
+				int k=insert_conditions.insert(ss);
+				if(k>0)
+				{
+					System.out.println("Insertion done successfully");
+					aaa.setText("");
+					ccc.setText("");
+				}
+				else
+				{
+					System.out.println("Please give a valid input.");
+				}
+			}
+		});
 		aaa.setBounds(400,102,500,70);
         bbb.setBounds(400,202,500,70);
 		box1.setBounds(400,302,500,70);
 		ccc.setBounds(400,402,500,70);
 		box2.setBounds(400,502,500,70);
 		ddd.setBounds(400,602,500,70);
+		cvr.setBounds(400,702,500,70);
 		x.add(add);
 		add.setVisible(true);
 		add.setBounds(700,700,100,30);
@@ -63,6 +88,6 @@ public class Faculty extends JFrame{
 		x.setVisible(true);
 	}
     public static void main(String[] args) {
-		Faculty c = new Faculty();
+		
 	}
 }
