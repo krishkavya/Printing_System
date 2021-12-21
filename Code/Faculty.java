@@ -11,15 +11,15 @@ public class Faculty extends JFrame{
 	public Faculty()
 	{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		JTextField brr=new JTextField();
-        JTextField err = new JTextField();
+		JTextField aaa =new JTextField();
+        JTextField bbb  = new JTextField();
 		String s[]= {"Color","Black n White"};
-        JComboBox<String> box= new JComboBox<>(s);
-		JTextField drr=new JTextField();
+        JComboBox<String> box1   = new JComboBox<>(s);
+		JTextField ccc =new JTextField();
 		String st[]= {"single","double"};
-		JComboBox<String> box2=new JComboBox<>(st);
+		JComboBox<String> box2  =new JComboBox<>(st);
 		String sk[]= {"A4","A3","A2","A1"};
-		JComboBox <String>frr=new JComboBox<>(sk);
+		JComboBox <String>ddd  =new JComboBox<>(sk);
 		JFrame x=new JFrame("Faculty Portal");
 		x.setSize(1500,1000);
 		JLabel label=new JLabel("Request");
@@ -36,12 +36,13 @@ public class Faculty extends JFrame{
 		JLabel sizes=new JLabel("Size of page");
 		sizes.setBounds(0,602,200,100);
 		JButton add=new JButton("Request");
-		brr.setBounds(400,102,500,70);
-        err.setBounds(400,202,500,70);
-		box.setBounds(400,302,500,70);
-		drr.setBounds(400,402,500,70);
+		
+		aaa.setBounds(400,102,500,70);
+        bbb.setBounds(400,202,500,70);
+		box1.setBounds(400,302,500,70);
+		ccc.setBounds(400,402,500,70);
 		box2.setBounds(400,502,500,70);
-		frr.setBounds(400,602,500,70);
+		ddd.setBounds(400,602,500,70);
 		x.add(add);
 		add.setVisible(true);
 		add.setBounds(700,700,100,30);
@@ -51,12 +52,12 @@ public class Faculty extends JFrame{
 		x.add(noc);
 		x.add(page_type);
 		x.add(sizes);
-		x.add(brr);
-        x.add(err);
-		x.add(box);
-		x.add(drr);
+		x.add(aaa);
+        x.add(bbb);
+		x.add(box1);
+		x.add(ccc);
 		x.add(box2);
-		x.add(frr);
+		x.add(ddd);
 		x.setLocationRelativeTo(null);
 		x.setLayout(null);
 		x.setVisible(true);
