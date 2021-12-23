@@ -10,9 +10,12 @@ public class login_connection
 	  Statement stmt=connect.createStatement();  
 	  ResultSet rs=stmt.executeQuery("select * from Faculty_details");  
 	  while(rs.next())  
-		  /* if(rs==tf1)
-		   * 
-		   */
+		     
+	  { if(rs==tf1)
+		    {break;}
+	  }
+		    
+		   
 	  System.out.println(rs.getString(2));  
 	  connect.close();  
 	}
