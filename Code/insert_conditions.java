@@ -1,24 +1,30 @@
 package project;
-
-import java.sql.*;
-
+import java.sql.*;  
 public class insert_conditions {
 	 
 	public static void main(String[] args) throws Exception
     {
-		String url = "jdbc:postgresql://localhost:5432/Printing System";
-		String uname = "postgres";
+		String url = "jdbc:postgresql://localhost:5432/Printing System"; // url connection 
+		String uname = "postgres"; 
 		String pass = "postgres";
-		String f_id = "";
-		String f_name = "";
-		String query = "insert into   Faculty_Details values (?,?) ";
+		String print_side = "";
+		String Color = "";
+		String Paper_type = "";
+		String doc_name = "";
+		String doc_type = "";
+		String paper_sizes = "";
+		String query = "insert into   Print_Request values (?,?,?,?,?,?) ";
 		
-		Class.forName("org.postgresql.Driver");
+		Class.forName("org.postgresql.Driver"); // driver class
 		Connection con = DriverManager.getConnection(url, uname, pass);
 		PreparedStatement st = con.prepareStatement(query);
-		st.setString(1, f_name);
-		st.setString(2, f_id);
-		int count  = st.executeUpdate();
+		st.setString(1, print_side);
+		st.setString(2, Color);
+		st.setString(3, Paper_type);
+		st.setString(4,doc_name);
+		st.setString(5, doc_type);
+		st.setString(6, paper_sizes);
+        int count  = st.executeUpdate();
 		
 		
 		
@@ -29,12 +35,4 @@ public class insert_conditions {
 		st.close();
 		con.close();
     }
-
-	public static int insert(faculty_conditions ss) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
-
-	
-
